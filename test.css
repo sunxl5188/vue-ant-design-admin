@@ -1,0 +1,36 @@
+/*
+Error: Invalid GBK character "\xE8"
+        on line 2 of test.scss
+
+1: /*
+2:  说明：
+3:  模块使用[换行符]或[空格符]后，webkit浏览器中会引起最后一个模块有多余空白，使用font-size:0可清除该空格
+4:  1.text-align-last:justify 目前只有IE支持，标准浏览器需要使用 .demo:after 伪类模拟类似效果
+5:  2.opera浏览器需要添加 vertical-align:top 才能完全解决底部多余的空白
+6: *\/
+7: .text-justify{
+
+Backtrace:
+test.scss:2
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.4/lib/sass/util.rb:1090:in `rescue in block in find_encoding_error'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.4/lib/sass/util.rb:1087:in `block in find_encoding_error'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.4/lib/sass/util.rb:1086:in `each'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.4/lib/sass/util.rb:1086:in `each_with_index'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.4/lib/sass/util.rb:1086:in `find_encoding_error'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.4/lib/sass/util.rb:814:in `check_sass_encoding'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.4/lib/sass/engine.rb:444:in `check_encoding!'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.4/lib/sass/engine.rb:400:in `_to_tree'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:387:in `run'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:63:in `process_result'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.4/lib/sass/exec/base.rb:50:in `parse'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.4/lib/sass/exec/base.rb:18:in `parse!'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.4/bin/sass:13:in `<top (required)>'
+C:/Ruby24-x64/bin/sass:23:in `load'
+C:/Ruby24-x64/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid GBK character \"\xE8\"\A         on line 2 of test.scss\A \A 1: /*\A 2:  说明：\A 3:  模块使用[换行符]或[空格符]后，webkit浏览器中会引起最后一个模块有多余空白，使用font-size:0可清除该空格\A 4:  1.text-align-last:justify 目前只有IE支持，标准浏览器需要使用 .demo:after 伪类模拟类似效果\A 5:  2.opera浏览器需要添加 vertical-align:top 才能完全解决底部多余的空白\A 6: */\A 7: .text-justify{"; }

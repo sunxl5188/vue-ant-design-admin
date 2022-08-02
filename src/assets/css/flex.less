@@ -1,0 +1,57 @@
+.flex{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &-wrap{
+    flex-wrap: wrap;
+  }
+  &-nowrap{
+    flex-wrap: nowrap;
+  }
+  &-column{
+    flex-direction: column;
+  }
+}
+
+.col-top {
+  align-items: flex-start;
+}
+/* 底部对齐 */
+.col-bottom {
+  align-items: flex-end;
+}
+/* 左边对齐 */
+.row-left {
+  justify-content: flex-start;
+}
+/* 水平居中 */
+.row-center {
+  justify-content: center;
+}
+/* 右边对齐 */
+.row-right {
+  justify-content: flex-end;
+}
+/* 水平两端对齐，项目之间的间隔都相等 */
+.row-between {
+  justify-content: space-between;
+}
+
+/* 水平每个项目两侧的间隔相等，所以项目之间的间隔比项目与父元素两边的间隔大一倍 */
+.row-around {
+  justify-content: space-around;
+}
+
+.eachFlex(@i) when (@i < 13) {
+  .flex-@{i} {
+    flex: @i;
+  }
+  .eachFlex(@i + 1);
+}
+
+.eachFlex(1);
+
+.flex-fill{
+  flex: 1 1 auto !important;
+}

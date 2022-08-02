@@ -1,0 +1,99 @@
+@import (reference) "valiables";
+.each-color(@index) when (@index <= length(@color-val)) {
+  @name: extract(@color, @index);
+  --@{name}: extract(@color-val, @index);
+  .each-color(@index + 1);
+}
+
+.each-spacer(@index) when (@index <= length(@spacers)) {
+  @name: @index - 1;
+  .p-@{name} {
+    padding: extract(@spacers, @index);
+  }
+  .pl-@{name} {
+    padding-left: extract(@spacers, @index);
+  }
+  .pt-@{name} {
+    padding-top: extract(@spacers, @index);
+  }
+  .pr-@{name} {
+    padding-right: extract(@spacers, @index);
+  }
+  .pb-@{name} {
+    padding-bottom: extract(@spacers, @index);
+  }
+  .m-@{name} {
+    margin: extract(@spacers, @index);
+  }
+  .ml-@{name} {
+    margin-left: extract(@spacers, @index);
+  }
+  .mt-@{name} {
+    margin-top: extract(@spacers, @index);
+  }
+  .mr-@{name} {
+    margin-right: extract(@spacers, @index);
+  }
+  .mb-@{name} {
+    margin-bottom: extract(@spacers, @index);
+  }
+  .each-spacer(@index + 1);
+}
+
+.each-text-color(@i) when (@i <= length(@textColor)) {
+  @name: extract(@textColor, @i);
+  .text-@{name} {
+    color: var(~'--@{name}');
+  }
+  .each-text-color(@i + 1);
+}
+
+.each-width(@i) when (@i <= 20) {
+  @count: @i*5;
+  .w-@{count} {
+    width: percentage(@count / 100);
+  }
+  .each-width(@i+1);
+}
+
+.each-font-size(@i) when (@i <= 71){
+  @num: 9 + @i;
+  .font-@{num}{
+    font-size: unit(@num, px);
+  }
+  .each-font-size(@i + 1);
+}
+
+:root {
+  .each-color(1);
+}
+
+.each-spacer(1);
+.each-text-color(1);
+.each-width(1);
+.each-font-size(1);
+
+.each-bgColor(@i) when (@i <= length(@bgColor)){
+  @name: extract(@bgColor, @i);
+  .bg-@{name} {
+    background-color: var(~'--@{name}');
+  }
+  .each-bgColor(@i + 1);
+}
+.each-bgColor(1);
+
+.border-bottom{
+  border-bottom: 1px solid @border-color;
+}
+
+.border-left{
+  border-left: 1px solid @border-color;
+}
+
+.border-top{
+  border-top: 1px solid @border-color;
+}
+
+.border-right{
+  border-right: 1px solid @border-color;
+}

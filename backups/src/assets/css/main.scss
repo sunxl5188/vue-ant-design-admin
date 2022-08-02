@@ -1,0 +1,72 @@
+@charset "utf-8";
+@import "iconfont/iconfont.css";
+@import "iCheck/skins/all.css";
+@import "flex";
+
+$color: #333 #666 #999 #f00;
+$font-color: (
+        c333:#333,
+        c666:#666,
+        c999:#999,
+        cf00:#f00
+);
+
+@for $i from 1 through 20 {
+  .h-#{$i * 5} {
+    font-size: 0;
+    line-height: 0;
+    clear: both;
+    overflow: hidden;
+    height: $i*5 +px;
+  }
+  .ml-#{$i*5} {
+    margin-left: $i*5 +px;
+  }
+  .mt-#{$i*5} {
+    margin-top: $i*5 +px;
+  }
+  .mr-#{$i*5} {
+    margin-right: $i*5 +px;
+  }
+  .mb-#{$i*5} {
+    margin-bottom: $i*5 +px;
+  }
+  .pl-#{$i*5} {
+    padding-left: $i*5 +px;
+  }
+  .pt-#{$i*5} {
+    padding-top: $i*5 +px;
+  }
+  .pr-#{$i*5} {
+    padding-right: $i*5 +px;
+  }
+  .pb-#{$i*5} {
+    padding-bottom: $i*5 +px;
+  }
+  .font-#{10+$i*2} {
+    font-size: 10+$i*2+px;
+  }
+}
+
+@each $i, $c in $font-color {
+  .#{$i} {
+    color: $c
+  }
+}
+
+@for $i from 1 through 20 {
+  $n: $i*5;
+  .w-#{$n} {
+    width: percentage($n / 100);
+  }
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  font-size: 16px;
+}

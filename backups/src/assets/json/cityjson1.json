@@ -1,0 +1,594 @@
+{
+  "cityList": [
+    {
+      "area_id": "350000",
+      "title": "福建省",
+      "pinyin": "fujian",
+      "pid": "0",
+      "child": [
+        {
+          "area_id": "350001",
+          "title": "福州市",
+          "pinyin": "fuzhou",
+          "pid": "1168",
+          "child": [
+            {
+              "area_id": "350001",
+              "title": "鼓楼区",
+              "pinyin": "gulou",
+              "pid": "1169"
+            },
+            {
+              "area_id": "350004",
+              "title": "台江区",
+              "pinyin": "taijiang",
+              "pid": "1169"
+            },
+            {
+              "area_id": "350007",
+              "title": "仓山区",
+              "pinyin": "cangshan",
+              "pid": "1169"
+            },
+            {
+              "area_id": "350015",
+              "title": "马尾区",
+              "pinyin": "mawei",
+              "pid": "1169"
+            },
+            {
+              "area_id": "350011",
+              "title": "晋安区",
+              "pinyin": "jin'an",
+              "pid": "1169"
+            },
+            {
+              "area_id": "350100",
+              "title": "闽侯县",
+              "pinyin": "minhou",
+              "pid": "1169"
+            },
+            {
+              "area_id": "350500",
+              "title": "连江县",
+              "pinyin": "lianjiang",
+              "pid": "1169"
+            },
+            {
+              "area_id": "350600",
+              "title": "罗源县",
+              "pinyin": "luoyuan",
+              "pid": "1169"
+            },
+            {
+              "area_id": "350800",
+              "title": "闽清县",
+              "pinyin": "minqing",
+              "pid": "1169"
+            },
+            {
+              "area_id": "350700",
+              "title": "永泰县",
+              "pinyin": "yongtai",
+              "pid": "1169"
+            },
+            {
+              "area_id": "350400",
+              "title": "平潭县",
+              "pinyin": "pingtan",
+              "pid": "1169"
+            },
+            {
+              "area_id": "350300",
+              "title": "福清市",
+              "pinyin": "fuqing",
+              "pid": "1169"
+            },
+            {
+              "area_id": "350200",
+              "title": "长乐市",
+              "pinyin": "changle",
+              "pid": "1169"
+            }
+          ]
+        },
+        {
+          "area_id": "361003",
+          "title": "厦门市",
+          "pinyin": "xiamen",
+          "pid": "1168",
+          "child": [
+            {
+              "area_id": "361001",
+              "title": "思明区",
+              "pinyin": "siming",
+              "pid": "1183"
+            },
+            {
+              "area_id": "361026",
+              "title": "海沧区",
+              "pinyin": "haicang",
+              "pid": "1183"
+            },
+            {
+              "area_id": "361006",
+              "title": "湖里区",
+              "pinyin": "huli",
+              "pid": "1183"
+            },
+            {
+              "area_id": "361021",
+              "title": "集美区",
+              "pinyin": "jimei",
+              "pid": "1183"
+            },
+            {
+              "area_id": "361100",
+              "title": "同安区",
+              "pinyin": "tong'an",
+              "pid": "1183"
+            },
+            {
+              "area_id": "361101",
+              "title": "翔安区",
+              "pinyin": "xiang'an",
+              "pid": "1183"
+            }
+          ]
+        },
+        {
+          "area_id": "351100",
+          "title": "莆田市",
+          "pinyin": "putian",
+          "pid": "1168",
+          "child": [
+            {
+              "area_id": "351100",
+              "title": "城厢区",
+              "pinyin": "chengxiang",
+              "pid": "1190"
+            },
+            {
+              "area_id": "351111",
+              "title": "涵江区",
+              "pinyin": "hanjiang",
+              "pid": "1190"
+            },
+            {
+              "area_id": "351100",
+              "title": "荔城区",
+              "pinyin": "licheng",
+              "pid": "1190"
+            },
+            {
+              "area_id": "351152",
+              "title": "秀屿区",
+              "pinyin": "xiuyu",
+              "pid": "1190"
+            },
+            {
+              "area_id": "351200",
+              "title": "仙游县",
+              "pinyin": "xianyou",
+              "pid": "1190"
+            }
+          ]
+        },
+        {
+          "area_id": "365000",
+          "title": "三明市",
+          "pinyin": "sanming",
+          "pid": "1168",
+          "child": [
+            {
+              "area_id": "365000",
+              "title": "梅列区",
+              "pinyin": "meilie",
+              "pid": "1196"
+            },
+            {
+              "area_id": "365001",
+              "title": "三元区",
+              "pinyin": "sanyuan",
+              "pid": "1196"
+            },
+            {
+              "area_id": "365200",
+              "title": "明溪县",
+              "pinyin": "mingxi",
+              "pid": "1196"
+            },
+            {
+              "area_id": "365300",
+              "title": "清流县",
+              "pinyin": "qingliu",
+              "pid": "1196"
+            },
+            {
+              "area_id": "365400",
+              "title": "宁化县",
+              "pinyin": "ninghua",
+              "pid": "1196"
+            },
+            {
+              "area_id": "366100",
+              "title": "大田县",
+              "pinyin": "datian",
+              "pid": "1196"
+            },
+            {
+              "area_id": "365100",
+              "title": "尤溪县",
+              "pinyin": "youxi",
+              "pid": "1196"
+            },
+            {
+              "area_id": "365500",
+              "title": "沙县",
+              "pinyin": "shaxian",
+              "pid": "1196"
+            },
+            {
+              "area_id": "353300",
+              "title": "将乐县",
+              "pinyin": "jiangle",
+              "pid": "1196"
+            },
+            {
+              "area_id": "354400",
+              "title": "泰宁县",
+              "pinyin": "taining",
+              "pid": "1196"
+            },
+            {
+              "area_id": "354500",
+              "title": "建宁县",
+              "pinyin": "jianning",
+              "pid": "1196"
+            },
+            {
+              "area_id": "366000",
+              "title": "永安市",
+              "pinyin": "yong'an",
+              "pid": "1196"
+            }
+          ]
+        },
+        {
+          "area_id": "362000",
+          "title": "泉州市",
+          "pinyin": "quanzhou",
+          "pid": "1168",
+          "child": [
+            {
+              "area_id": "362000",
+              "title": "鲤城区",
+              "pinyin": "licheng",
+              "pid": "1209"
+            },
+            {
+              "area_id": "362000",
+              "title": "丰泽区",
+              "pinyin": "fengze",
+              "pid": "1209"
+            },
+            {
+              "area_id": "362011",
+              "title": "洛江区",
+              "pinyin": "luojiang",
+              "pid": "1209"
+            },
+            {
+              "area_id": "362114",
+              "title": "泉港区",
+              "pinyin": "quangang",
+              "pid": "1209"
+            },
+            {
+              "area_id": "362100",
+              "title": "惠安县",
+              "pinyin": "hui'an",
+              "pid": "1209"
+            },
+            {
+              "area_id": "362400",
+              "title": "安溪县",
+              "pinyin": "anxi",
+              "pid": "1209"
+            },
+            {
+              "area_id": "362600",
+              "title": "永春县",
+              "pinyin": "yongchun",
+              "pid": "1209"
+            },
+            {
+              "area_id": "362500",
+              "title": "德化县",
+              "pinyin": "dehua",
+              "pid": "1209"
+            },
+            {
+              "area_id": "",
+              "title": "金门县",
+              "pinyin": "jinmen",
+              "pid": "1209"
+            },
+            {
+              "area_id": "362700",
+              "title": "石狮市",
+              "pinyin": "shishi",
+              "pid": "1209"
+            },
+            {
+              "area_id": "362200",
+              "title": "晋江市",
+              "pinyin": "jinjiang",
+              "pid": "1209"
+            },
+            {
+              "area_id": "362300",
+              "title": "南安市",
+              "pinyin": "nan'an",
+              "pid": "1209"
+            }
+          ]
+        },
+        {
+          "area_id": "363005",
+          "title": "漳州市",
+          "pinyin": "zhangzhou",
+          "pid": "1168",
+          "child": [
+            {
+              "area_id": "363000",
+              "title": "芗城区",
+              "pinyin": "xiangcheng",
+              "pid": "1222"
+            },
+            {
+              "area_id": "363005",
+              "title": "龙文区",
+              "pinyin": "longwen",
+              "pid": "1222"
+            },
+            {
+              "area_id": "363300",
+              "title": "云霄县",
+              "pinyin": "yunxiao",
+              "pid": "1222"
+            },
+            {
+              "area_id": "363200",
+              "title": "漳浦县",
+              "pinyin": "zhangpu",
+              "pid": "1222"
+            },
+            {
+              "area_id": "363500",
+              "title": "诏安县",
+              "pinyin": "zhao'an",
+              "pid": "1222"
+            },
+            {
+              "area_id": "363900",
+              "title": "长泰县",
+              "pinyin": "changtai",
+              "pid": "1222"
+            },
+            {
+              "area_id": "363400",
+              "title": "东山县",
+              "pinyin": "dongshan",
+              "pid": "1222"
+            },
+            {
+              "area_id": "363600",
+              "title": "南靖县",
+              "pinyin": "nanjing",
+              "pid": "1222"
+            },
+            {
+              "area_id": "363700",
+              "title": "平和县",
+              "pinyin": "pinghe",
+              "pid": "1222"
+            },
+            {
+              "area_id": "363800",
+              "title": "华安县",
+              "pinyin": "hua'an",
+              "pid": "1222"
+            },
+            {
+              "area_id": "363100",
+              "title": "龙海市",
+              "pinyin": "longhai",
+              "pid": "1222"
+            }
+          ]
+        },
+        {
+          "area_id": "353000",
+          "title": "南平市",
+          "pinyin": "nanping",
+          "pid": "1168",
+          "child": [
+            {
+              "area_id": "353000",
+              "title": "延平区",
+              "pinyin": "yanping",
+              "pid": "1234"
+            },
+            {
+              "area_id": "354200",
+              "title": "建阳区",
+              "pinyin": "jianyang",
+              "pid": "1234"
+            },
+            {
+              "area_id": "353200",
+              "title": "顺昌县",
+              "pinyin": "shunchang",
+              "pid": "1234"
+            },
+            {
+              "area_id": "353400",
+              "title": "浦城县",
+              "pinyin": "pucheng",
+              "pid": "1234"
+            },
+            {
+              "area_id": "354100",
+              "title": "光泽县",
+              "pinyin": "guangze",
+              "pid": "1234"
+            },
+            {
+              "area_id": "353500",
+              "title": "松溪县",
+              "pinyin": "songxi",
+              "pid": "1234"
+            },
+            {
+              "area_id": "353600",
+              "title": "政和县",
+              "pinyin": "zhenghe",
+              "pid": "1234"
+            },
+            {
+              "area_id": "354000",
+              "title": "邵武市",
+              "pinyin": "shaowu",
+              "pid": "1234"
+            },
+            {
+              "area_id": "354300",
+              "title": "武夷山市",
+              "pinyin": "wuyishan",
+              "pid": "1234"
+            },
+            {
+              "area_id": "353100",
+              "title": "建瓯市",
+              "pinyin": "jianou",
+              "pid": "1234"
+            }
+          ]
+        },
+        {
+          "area_id": "364000",
+          "title": "龙岩市",
+          "pinyin": "longyan",
+          "pid": "1168",
+          "child": [
+            {
+              "area_id": "364000",
+              "title": "新罗区",
+              "pinyin": "xinluo",
+              "pid": "1245"
+            },
+            {
+              "area_id": "366300",
+              "title": "长汀县",
+              "pinyin": "changting",
+              "pid": "1245"
+            },
+            {
+              "area_id": "364100",
+              "title": "永定区",
+              "pinyin": "yongding",
+              "pid": "1245"
+            },
+            {
+              "area_id": "364200",
+              "title": "上杭县",
+              "pinyin": "shanghang",
+              "pid": "1245"
+            },
+            {
+              "area_id": "364300",
+              "title": "武平县",
+              "pinyin": "wuping",
+              "pid": "1245"
+            },
+            {
+              "area_id": "366200",
+              "title": "连城县",
+              "pinyin": "liancheng",
+              "pid": "1245"
+            },
+            {
+              "area_id": "364400",
+              "title": "漳平市",
+              "pinyin": "zhangping",
+              "pid": "1245"
+            }
+          ]
+        },
+        {
+          "area_id": "352100",
+          "title": "宁德市",
+          "pinyin": "ningde",
+          "pid": "1168",
+          "child": [
+            {
+              "area_id": "352100",
+              "title": "蕉城区",
+              "pinyin": "jiaocheng",
+              "pid": "1253"
+            },
+            {
+              "area_id": "355100",
+              "title": "霞浦县",
+              "pinyin": "xiapu",
+              "pid": "1253"
+            },
+            {
+              "area_id": "352200",
+              "title": "古田县",
+              "pinyin": "gutian",
+              "pid": "1253"
+            },
+            {
+              "area_id": "352300",
+              "title": "屏南县",
+              "pinyin": "pingnan",
+              "pid": "1253"
+            },
+            {
+              "area_id": "355500",
+              "title": "寿宁县",
+              "pinyin": "shouning",
+              "pid": "1253"
+            },
+            {
+              "area_id": "355400",
+              "title": "周宁县",
+              "pinyin": "zhouning",
+              "pid": "1253"
+            },
+            {
+              "area_id": "355300",
+              "title": "柘荣县",
+              "pinyin": "zherong",
+              "pid": "1253"
+            },
+            {
+              "area_id": "355000",
+              "title": "福安市",
+              "pinyin": "fu'an",
+              "pid": "1253"
+            },
+            {
+              "area_id": "355200",
+              "title": "福鼎市",
+              "pinyin": "fuding",
+              "pid": "1253"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
