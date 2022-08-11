@@ -15,7 +15,11 @@ export default {
       const hasLogin = !!+cookies.get(`${prefix}hasLogin`)
       // 如果不需要登录时
       if (to.meta.requireAuth === undefined && to.name !== null) {
-        next()
+        if (to.path === '/login' && hasLogin) {
+          next('/')
+        } else {
+          next()
+        }
       } else {
         // 如果没有登录，跳转登录页
         if (!hasLogin) {

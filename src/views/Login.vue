@@ -81,11 +81,6 @@ export default {
       }
     }
   },
-  beforeMount () {
-    if (!!+this.$cookies.get('hasLogin') === true) {
-      this.$router.replace('/')
-    }
-  },
   methods: {
     submitSave () {
       this.$refs.myform.validate(valid => {
@@ -131,6 +126,7 @@ export default {
                 del: 0,
                 add: 1
               },
+              photosphere: {},
               photosphere: {}
             },
             form: {

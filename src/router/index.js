@@ -180,6 +180,16 @@ const routeList = [
           keepAlive: true,
           requireAuth: true
         }
+      },
+      {
+        path: 'uploadcropper',
+        name: 'uploadCropper',
+        component: () => import('../views/admin/basics/UploadCropper'),
+        meta: {
+          title: '图片裁切',
+          keepAlive: true,
+          requireAuth: true
+        }
       }
     ]
   },
