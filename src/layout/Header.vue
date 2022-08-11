@@ -167,7 +167,6 @@ export default {
           onOk: () => {
             this.$store.dispatch('logOut')
             this.$router.push('/login?redirect?' + this.$route.fullPath)
-            location.reload()
           }
         }))
     },
