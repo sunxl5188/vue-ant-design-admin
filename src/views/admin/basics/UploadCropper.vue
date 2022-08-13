@@ -1,7 +1,15 @@
 <template>
   <div class="cropper-app">
-    <el-form :model="formValidate" :rules="ruleValidate" ref="formValidate" label-width="100px" class="demo-ruleForm">
-      <el-form-item label="封面上传" prop="mainImage">
+    <a-form-model
+          ref="formValidate"
+          layout="horizontal"
+          :model="formValidate"
+          :rules="ruleValidate"
+          :label-col="{span:5}"
+          :wrapper-col="{span:12}"
+          @submit.prevent="submitSave"
+        >
+      <a-form-model-item label="封面上传" prop="mainImage">
         <div class="list-img-box">
           <div v-if="formValidate.mainImage !== ''">
             <img :src="formValidate.mainImage" style='width:300px;height:150px' alt="自定义封面">
@@ -12,28 +20,41 @@
           </div>
         </div>
         <input type="hidden" v-model="formValidate.mainImage" placeholder="请添加封面">
-      </el-form-item>
-    </el-form>
+      </a-form-model-item>
+      <a-form-model-item :wrapper-col="{span:12,offset:5}">
+        <a-button type="primary" html-type="submit">
+          提交
+        </a-button>
+      </a-form-model-item>
+    </a-form-model>
+
     <!-- 剪裁组件弹窗 -->
-    <el-dialog
+    <a-modal
       title="裁切封面"
-      :visible.sync="cropperModel"
+      :visible="cropperModel"
+      :confirm-loading="false"
+      :footer="null"
       width="950px"
-      center
+      @ok="handleConfirm"
+      @cancel="cropperModel=false"
     >
       <upload-cropper
         :Name="cropperName"
         @uploadImgSuccess = "handleUploadSuccess"
         ref="child">
       </upload-cropper>
-    </el-dialog>
+    </a-modal>
+
     <!--查看大封面-->
-    <el-dialog
+    <a-modal
       title="查看大封面"
-      :visible.sync="imgVisible"
-      center>
+      :visible="imgVisible"
+      :confirm-loading="false"
+      :closable="false"
+      @cancel="imgVisible=false"
+    >
       <img :src="imgName" v-if="imgVisible" style="width: 100%" alt="查看">
-    </el-dialog>
+    </a-modal>
   </div>
 </template>
 
@@ -60,10 +81,10 @@ export default {
       imgVisible: false
     }
   },
+  mounted () {
+    // console.log(this.http)
+  },
   methods: {
-    middleAdFinish () {
-
-    },
     // 封面设置
     uploadPicture (name) {
       this.cropperName = name
@@ -79,7 +100,9 @@ export default {
           break
       }
       this.cropperModel = false
-    }
+    },
+    handleConfirm () {},
+    submitSave () {}
   }
 }
 </script>

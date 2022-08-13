@@ -65,6 +65,7 @@ export default {
   name: 'Login',
   data () {
     return {
+      refresh: 0,
       myform: {
         name: '孙悟空',
         password: '123456'
@@ -127,7 +128,7 @@ export default {
                 add: 1
               },
               photosphere: {},
-              photosphere: {}
+              uploadcropper: {}
             },
             form: {
               baseform: {

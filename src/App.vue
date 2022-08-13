@@ -6,10 +6,10 @@
     appear
   >
     <a-config-provider :locale="locale.zhCN" v-wechat-title="`${$route.meta.title}-后台管理系统`">
+      <router-view v-if="!$route.meta.keepAlive"/>
       <keep-alive>
         <router-view v-if="$route.meta.keepAlive"/>
       </keep-alive>
-      <router-view v-if="!$route.meta.keepAlive"/>
     </a-config-provider>
   </transition>
 </template>

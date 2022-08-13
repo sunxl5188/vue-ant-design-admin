@@ -32,15 +32,15 @@
       <!--底部操作工具按钮-->
       <div class="footer-btn">
         <div class="scope-btn">
-          <label class="btn" for="uploads">选择封面</label>
+          <a-button type="primary">
+            <label for="uploads">选择图片</label>
+          </a-button>
           <input type="file" id="uploads" style="position:absolute; clip:rect(0 0 0 0);" accept="image/png, image/jpeg, image/gif, image/jpg" @change="selectImg($event)">
-          <el-button size="mini" type="danger" plain icon="el-icon-zoom-in" @click="changeScale(1)">放大</el-button>
-          <el-button size="mini" type="danger" plain icon="el-icon-zoom-out" @click="changeScale(-1)">缩小</el-button>
-          <el-button size="mini" type="danger" plain @click="rotateLeft">↺ 左旋转</el-button>
-          <el-button size="mini" type="danger" plain @click="rotateRight">↻ 右旋转</el-button>
-        </div>
-        <div class="upload-btn">
-          <el-button size="mini" type="success" @click="uploadImg('blob')">上传封面 <i class="el-icon-upload"></i></el-button>
+          <a-button type="default" icon="zoom-in" @click="changeScale(1)">放大</a-button>
+          <a-button type="default" icon="zoom-out" @click="changeScale(-1)">缩小</a-button>
+          <a-button type="default" icon="undo" @click="rotateLeft">左旋转</a-button>
+          <a-button type="default" icon="redo" @click="rotateRight">左旋转</a-button>
+          <a-button v-if="option.img" type="primary" icon="upload" @click="uploadImg('blob')">上传封面</a-button>
         </div>
       </div>
     </div>
@@ -54,6 +54,7 @@
 </template>
 
 <script>
+// https://github.com/xyxiao001/vue-cropper
 import { VueCropper } from 'vue-cropper'
 
 export default {
@@ -61,12 +62,11 @@ export default {
   components: {
     VueCropper
   },
-  props: ['Name'],
   data () {
     return {
-      name: this.Name,
       previews: {},
       option: {
+        fileName: '', // 选择的文件名称
         img: '', // 裁剪图片的地址
         outputSize: 1, // 裁剪生成图片的质量(可选0.1 - 1)
         outputType: 'jpeg', // 裁剪生成图片的格式（jpeg || png || webp）
@@ -76,9 +76,9 @@ export default {
         autoCropWidth: 230, // 默认生成截图框宽度
         autoCropHeight: 150, // 默认生成截图框高度
         fixed: true, // 是否开启截图框宽高固定比例
-        fixedNumber: [1.53, 1], // 截图框的宽高比例
+        fixedNumber: [1, 1], // 截图框的宽高比例
         full: false, // false按原比例裁切图片，不失真
-        fixedBox: true, // 固定截图框大小，不允许改变
+        fixedBox: false, // 固定截图框大小，不允许改变
         canMove: false, // 上传图片是否可以移动
         canMoveBox: true, // 截图框能否拖动
         original: false, // 上传图片按照原始比例渲染
@@ -87,7 +87,7 @@ export default {
         infoTrue: false, // true为展示真实输出图片宽高，false展示看到的截图框宽高
         maxImgSize: 3000, // 限制图片最大宽度和高度
         enlarge: 1, // 图片根据截图框输出比例倍数
-        mode: '230px 150px' // 图片默认渲染方式
+        mode: 'contain' // 图片默认渲染方式 contain , cover, 100px, 100% auto
       }
     }
   },
@@ -117,9 +117,13 @@ export default {
     selectImg (e) {
       const file = e.target.files[0]
       if (!/\.(jpg|jpeg|png|JPG|PNG)$/.test(e.target.value)) {
-        this.$message({
-          message: '图片类型要求：jpeg、jpg、png',
-          type: 'error'
+        this.$confirm({
+          title: '温馨提示',
+          content: '图片类型要求：jpeg、jpg、png',
+          centered: true,
+          onOk: () => {
+            this.$modal.destroyAll()
+          }
         })
         return false
       }
@@ -133,35 +137,31 @@ export default {
           data = e.target.result
         }
         this.option.img = data
+        this.option.fileName = file.name
       }
       // 转化为base64
       reader.readAsDataURL(file)
     },
     // 上传图片
     uploadImg (type) {
-      const _this = this
+      const self = this
       if (type === 'blob') {
         // 获取截图的blob数据
         this.$refs.cropper.getCropBlob(async (data) => {
           const formData = new FormData()
-          formData.append('file', data, 'DX.jpg')
+          formData.append('file', data, this.option.fileName)
           // 调用axios上传
-          const { data: res } = await _this.$http.post('/api/file/imgUpload', formData)
+          const { data: res } = await self.http.$post('imgUpload', formData)
           if (res.code === 200) {
-            _this.$message({
-              message: res.msg,
-              type: 'success'
+            self.$success({
+              title: '温馨提示',
+              content: res.msg
             })
-            const data = res.data.replace('[', '').replace(']', '').split(',')
-            const imgInfo = {
-              name: _this.Name,
-              url: data[0]
-            }
-            _this.$emit('uploadImgSuccess', imgInfo)
+            self.$emit('success', res.data)
           } else {
-            _this.$message({
-              message: '文件服务异常，请联系管理员！',
-              type: 'error'
+            self.warnings({
+              title: '温馨提示',
+              content: '文件服务异常，请联系管理员！'
             })
           }
         })
@@ -171,7 +171,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .cropper-content{
     display: flex;
     display: -webkit-flex;
@@ -183,7 +183,7 @@ export default {
   }
   .cropper{
     width: auto;
-    height: 300px;
+    height: 450px;
   }
 
   .show-preview{
@@ -204,39 +204,14 @@ export default {
     display: -webkit-flex;
     justify-content: flex-end;
   }
-  .upload-btn{
-    flex: 1;
-    -webkit-flex: 1;
-    display: flex;
-    display: -webkit-flex;
-    justify-content: center;
-  }
   .scope-btn{
+    width: 600px;
     display: flex;
     display: -webkit-flex;
-    justify-content: space-between;
-    padding-right: 10px;
-  }
-  .btn {
-    outline: none;
-    display: inline-block;
-    line-height: 1;
-    white-space: nowrap;
-    cursor: pointer;
-    -webkit-appearance: none;
-    text-align: center;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    outline: 0;
-    -webkit-transition: .1s;
-    transition: .1s;
-    font-weight: 500;
-    padding: 8px 15px;
-    font-size: 12px;
-    border-radius: 3px;
-    color: #fff;
-    background-color: #409EFF;
-    border-color: #409EFF;
-    margin-right: 10px;
+    justify-content: flex-start;
+
+    button{
+      margin-right: 10px;
+    }
   }
 </style>

@@ -12,6 +12,7 @@ import moment from 'moment'
 import uploader from 'vue-simple-uploader' // 引入分片上传组件
 import vuexStore from './store/vuex.mixin.js' // 引入vuex的简写法文件
 import { setStorage, getStorage, remStorage } from './assets/js/storage' // 引入本地存储方法
+import http from './assets/js/http'
 import api from './api/index'
 import utils from './assets/js/utils'
 // 引入CSS样式
@@ -27,6 +28,7 @@ Vue.use(antd)
 Vue.use(uploader)
 Vue.use(api)
 
+Vue.prototype.http = http
 Vue.prototype.$moment = moment
 Vue.prototype.$setStorage = setStorage
 Vue.prototype.$getStorage = getStorage

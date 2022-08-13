@@ -16,10 +16,10 @@
         </a-layout-header>
         <a-layout-content class="layout-content">
           <Mail v-if="$route.name.toLowerCase()==='index'"/>
+          <router-view v-if="!$route.meta.keepAlive"/>
           <keep-alive>
             <router-view v-if="$route.meta.keepAlive"/>
           </keep-alive>
-          <router-view v-if="!$route.meta.keepAlive"/>
         </a-layout-content>
       </a-layout>
     </a-layout>

@@ -166,7 +166,7 @@ export default {
           content: '您确定要退出登录？',
           onOk: () => {
             this.$store.dispatch('logOut')
-            this.$router.push('/login?redirect?' + this.$route.fullPath)
+            window.location.replace('/login?redirect=' + this.$route.fullPath)
           }
         }))
     },
